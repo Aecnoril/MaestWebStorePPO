@@ -16,14 +16,23 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="default.aspx" class="navbar-brand">Maest Web Store</a>
+                <a href="/Home/Index" class="navbar-brand">Maest Web Store</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a>Home</a></li>
-                    <li><a>Button One</a></li>
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li><a>Button Two</a></li>
                     <li><a>Button Three</a></li>
+                    <li class="pull-right">
+                        @if (Request.IsAuthenticated)
+                        {
+                            @Html.ActionLink("Logout", "Logout", "User")
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Login", "Login", "User")
+                        }
+                    </li>
                 </ul>
             </div>
         </div>

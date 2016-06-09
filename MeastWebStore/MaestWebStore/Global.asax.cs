@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,6 +14,16 @@ namespace MaestWebStore
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            if (!Util.DatabaseConnection.Initialize("dbi319888", "Knotwilg117", "192.168.15.50:1521/fhictora"))
+            {
+                Debug.WriteLine("Database connection is failing!");
+                this.Dispose();
+            }
+            else
+            {
+                Debug.WriteLine("Database connected!");
+            }
         }
     }
 }
