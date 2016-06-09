@@ -38,10 +38,38 @@ namespace MaestWebStore.Controllers
             }
             return View(user);
         }
+        /// <summary>
+        /// Logs the user out.
+        /// </summary>
+        /// <returns>MVC Actionresult</returns>
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
         }
+
+        [HttpGet]
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Register(Models.User user)
+        {
+            if (ModelState.IsValid)
+            {
+                if (user.IsRegistered(user.Username, user.Password))
+                {
+                    return RedirectToAction("Login", "User");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Register failed, username already in use");
+                }
+            }
+            return View(user);
+        }
+
     }
 }

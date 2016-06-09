@@ -1,0 +1,29 @@
+﻿@model MaestWebStore.Models.Game
+
+@{
+    ViewBag.Title = "Game";
+}
+
+<div id="login" class="col-lg-4">
+    <div class="panel panel-default">
+
+        <div class="panel-heading">
+            <h3 class="panel-title">@Model.Name</h3>
+        </div>
+        <div class="panel-body pre-scrollable" style="height:200px;">
+            <div>
+                <fieldset>
+                    @Html.LabelFor(g => g.Name): @Model.Name<br />
+                    @Html.LabelFor(g => g.AppType): @Model.AppType<br />
+                    @Html.LabelFor(g => g.Developer): @Model.Developer<br />
+                    @Html.LabelFor(g => g.Publisher): @Model.Publisher<br />
+                    @Html.LabelFor(g => g.Platform): @Model.Platform<br />
+                    @Html.LabelFor(g => g.Description): @Model.Description<br />
+                    @Html.LabelFor(g => g.ReqId): @Model.ReqId<br />
+                    @Html.LabelFor(g => g.Price): @Model.Price<br />
+                    @Html.LabelFor(g => g.Tags): @Html.DisplayFor(g => g.Tags)<br />
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</div>

@@ -30,39 +30,6 @@ D:\Workspace\School\SoftwarePO\Projects\MeastWebStore\MaestWebStore\MaestWebStor
 D:\Workspace\School\SoftwarePO\Projects\MeastWebStore\MaestWebStore\MaestWebStore.Tests\obj\Debug\MaestWebStore.Tests.csprojResolveAssemblyReference.cache
 D:\Workspace\School\SoftwarePO\Projects\MeastWebStore\MaestWebStore\MaestWebStore.Tests\obj\Debug\MaestWebStore.Tests.dll
 D:\Workspace\School\SoftwarePO\Projects\MeastWebStore\MaestWebStore\MaestWebStore.Tests\obj\Debug\MaestWebStore.Tests.pdb
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\ApplicationInsights.config
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\csc.exe
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\System.Collections.Immutable.dll
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\System.Reflection.Metadata.dll
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\vbc.exe
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\VBCSCompiler.exe
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\VBCSCompiler.exe.config
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\MaestWebStore.Tests.dll
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\MaestWebStore.Tests.pdb
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\MaestWebStore.dll
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\System.Web.Mvc.dll
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\System.Web.Razor.dll
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\System.Web.WebPages.Razor.dll
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\System.Web.WebPages.dll
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\MaestWebStore.pdb
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\System.Web.Mvc.xml
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\System.Web.Razor.xml
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\System.Web.WebPages.Razor.xml
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\System.Web.WebPages.xml
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\obj\Debug\MaestWebStore.Tests.csprojResolveAssemblyReference.cache
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\obj\Debug\MaestWebStore.Tests.dll
-D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\obj\Debug\MaestWebStore.Tests.pdb
 D:\Workspace\School\SoftwarePO\Projects\MeastWebStore\MaestWebStore.Tests\bin\Debug\ApplicationInsights.config
 D:\Workspace\School\SoftwarePO\Projects\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\csc.exe
 D:\Workspace\School\SoftwarePO\Projects\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -96,3 +63,37 @@ D:\Workspace\School\SoftwarePO\Projects\MeastWebStore\MaestWebStore.Tests\bin\De
 D:\Workspace\School\SoftwarePO\Projects\MeastWebStore\MaestWebStore.Tests\obj\Debug\MaestWebStore.Tests.csprojResolveAssemblyReference.cache
 D:\Workspace\School\SoftwarePO\Projects\MeastWebStore\MaestWebStore.Tests\obj\Debug\MaestWebStore.Tests.dll
 D:\Workspace\School\SoftwarePO\Projects\MeastWebStore\MaestWebStore.Tests\obj\Debug\MaestWebStore.Tests.pdb
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\obj\Debug\MaestWebStore.Tests.csprojResolveAssemblyReference.cache
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\ApplicationInsights.config
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\csc.exe
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\System.Collections.Immutable.dll
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\System.Reflection.Metadata.dll
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\vbc.exe
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\VBCSCompiler.exe
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\roslyn\VBCSCompiler.exe.config
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\MaestWebStore.Tests.dll
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\MaestWebStore.Tests.pdb
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\MaestWebStore.dll
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\System.Web.Mvc.dll
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\System.Web.Razor.dll
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\System.Web.WebPages.dll
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\MaestWebStore.pdb
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\System.Web.Mvc.xml
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\System.Web.Razor.xml
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\System.Web.WebPages.xml
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\obj\Debug\MaestWebStore.Tests.dll
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore.Tests\obj\Debug\MaestWebStore.Tests.pdb

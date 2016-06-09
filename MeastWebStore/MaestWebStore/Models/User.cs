@@ -26,6 +26,9 @@ namespace MaestWebStore.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
 
+        //TODO: Perhaps add a new password confirmation field using:
+        //[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+
         /// <summary>
         /// A boolean which if checked leaves the user logged in.
         /// </summary>
@@ -42,8 +45,7 @@ namespace MaestWebStore.Models
         {
             if (Util.DatabaseConnection.IsDatabaseConnected)
             {
-                //SELECT naam FROM account WHERE email = :accountname AND wachtwoord = :passwordhash
-                //"SELECT accountname FROM accounttable WHERE accountname = :accountname AND passwordhash = :passwordhash"
+                
                 string _sqlSelect = "SELECT accountname FROM accounttable WHERE accountname = :accountname AND passwordhash = :passwordhash";
                 OracleCommand cmd = new OracleCommand(_sqlSelect, Util.DatabaseConnection.Conn);
 
@@ -52,7 +54,7 @@ namespace MaestWebStore.Models
                     .Value = _username;
                 cmd.Parameters
                     .Add(new OracleParameter(":passwordhash", OracleDbType.NVarchar2))
-                    .Value = _password;
+                    .Value = Helpers.Hash.HashSHA1(_password);
 
                 var dbReader = cmd.ExecuteReader();
                 if (dbReader.HasRows)
@@ -73,6 +75,60 @@ namespace MaestWebStore.Models
                 Debug.WriteLine("Database Error");
                 return false;
             }
+
+        }
+
+        public bool IsRegistered(string _username, string _password)
+        {
+            string _sqlSelect = "SELECT accountname FROM accounttable WHERE accountname = :accountname";
+
+            OracleCommand cmd = new OracleCommand(_sqlSelect, Util.DatabaseConnection.Conn);
+
+            cmd.Parameters
+                .Add(new OracleParameter(":accountname", OracleDbType.NVarchar2))
+                .Value = _username;
+
+            var dbReader = cmd.ExecuteReader();
+
+            if (dbReader.HasRows)
+            {
+                dbReader.Dispose();
+                cmd.Dispose();
+                return false;
+            }
+            else
+            {
+                cmd.Dispose(); //Make the cmd ready for the next command
+                
+                string _sqlInsert = "INSERT INTO accounttable ( accountname, passwordhash ) VALUES ( :accountname, :passwordhash )";
+                cmd = new OracleCommand(_sqlInsert, Util.DatabaseConnection.Conn);
+
+                cmd.Parameters
+                    .Add(new OracleParameter(":accountname", OracleDbType.NVarchar2))
+                    .Value = _username;
+
+                cmd.Parameters
+                    .Add(new OracleParameter(":passwordhash", OracleDbType.NVarchar2))
+                    .Value = Helpers.Hash.HashSHA1(_password);
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+                catch (OracleException oEx)
+                {
+                    Debug.WriteLine("Couldn't register: " + oEx.Message);
+                    return false;
+                }
+                finally
+                {
+                    cmd.Dispose();
+                }
+
+            }
+
+
 
         }
     }

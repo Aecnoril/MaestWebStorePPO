@@ -1,0 +1,11 @@
+﻿@model MaestWebStore.Models.StoreEntities
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layouts/_MainLayoutPage.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.DisplayFor(g => g.Games);
+}

@@ -149,13 +149,17 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Hash.cs" />
+    <Compile Include="Models\Application.cs" />
+    <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\StoreEntities.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Util\ActiveActionLinkHelper.cs" />
     <Compile Include="Util\DatabaseConnection.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +172,9 @@
     <Content Include="Views\Layouts\_ProtectedLayoutPage.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\Store\Index.cshtml" />
+    <Content Include="Views\Store\DisplayTemplates\Game.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
