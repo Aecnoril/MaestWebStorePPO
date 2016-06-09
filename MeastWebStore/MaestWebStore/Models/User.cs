@@ -32,7 +32,12 @@ namespace MaestWebStore.Models
         [Display(Name = "Remember me on this computer")]
         public bool RememberMe { get; set; }
 
-
+        /// <summary>
+        /// Checks wether the combination of a username and password exists in the database.
+        /// </summary>
+        /// <param name="_username">Username</param>
+        /// <param name="_password">Password</param>
+        /// <returns>A bool wether the user exists or not.</returns>
         public bool IsValid(string _username, string _password)
         {
             if (Util.DatabaseConnection.IsDatabaseConnected)

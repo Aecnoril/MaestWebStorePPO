@@ -18,7 +18,7 @@ namespace MaestWebStore
             if (!Util.DatabaseConnection.Initialize("dbi319888", "Knotwilg117", "192.168.15.50:1521/fhictora"))
             {
                 Debug.WriteLine("Database connection is failing!");
-                this.Dispose();
+                
             }
             else
             {
