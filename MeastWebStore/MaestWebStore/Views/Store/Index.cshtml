@@ -7,5 +7,7 @@
 
 @using (Html.BeginForm())
 {
-    @Html.DisplayFor(g => g.Games);
+    <div class="row" id="grid">
+        @Html.DisplayFor(g => g.Games)
+    </div>
 }

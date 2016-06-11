@@ -4,15 +4,14 @@
     ViewBag.Title = "Game";
 }
 
-<div id="login" class="col-lg-4">
+<div id="game" class="col-lg-5 col-md-4 col-sm-5">
     <div class="panel panel-default">
-
         <div class="panel-heading">
-            <h3 class="panel-title">@Model.Name</h3>
+            <h3 class="panel-title pull-left">@Model.Name</h3>
+            <div class="clearfix"></div>
+
         </div>
-        <div class="panel-body pre-scrollable" style="height:200px;">
-            <div>
-                <fieldset>
+        <div class="panel-body panel-game">
                     @Html.LabelFor(g => g.Name): @Model.Name<br />
                     @Html.LabelFor(g => g.AppType): @Model.AppType<br />
                     @Html.LabelFor(g => g.Developer): @Model.Developer<br />
@@ -22,8 +21,11 @@
                     @Html.LabelFor(g => g.ReqId): @Model.ReqId<br />
                     @Html.LabelFor(g => g.Price): @Model.Price<br />
                     @Html.LabelFor(g => g.Tags): @Html.DisplayFor(g => g.Tags)<br />
-                </fieldset>
-            </div>
+        </div>
+        <div class="panel-footer">
+            <button class="btn btn-sm pull-right">View Game</button>
+            <div class="clearfix"></div>
         </div>
     </div>
 </div>
+

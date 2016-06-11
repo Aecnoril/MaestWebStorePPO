@@ -137,3 +137,4 @@ D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWe
 D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore\bin\System.Web.Mvc.xml
 D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore\obj\Debug\MaestWebStore.dll
 D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore\obj\Debug\MaestWebStore.pdb
+D:\Workspace\School\SE\Visual Studio Projects\ASPnet\SE2PO\MeastWebStore\MaestWebStore\obj\Debug\MaestWebStore.csprojResolveAssemblyReference.cache

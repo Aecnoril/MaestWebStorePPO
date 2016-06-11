@@ -11,6 +11,12 @@ html {
 }
 body {
   margin: 0;
+  background: url('http://store.akamai.steamstatic.com/public/images/v6/colored_body_top.png?v=2') center top no-repeat #1b2838;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /*background: #1b2838;*/
 }
 article,
 aside,
@@ -6758,3 +6764,8 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+/*My own classes*/
+.panel-game {
+    overflow-y:auto;
+    height: 250px;
+}
