@@ -5,9 +5,8 @@
     Layout = "~/Views/Layouts/_MainLayoutPage.cshtml";
 }
 
-@using (Html.BeginForm())
-{
-    <div class="row" id="grid">
-        @Html.DisplayFor(g => g.Games)
-    </div>
-}
+<h1 class="text-muted">@ViewBag.ListType</h1>
+<div class="row" id="grid">
+    @Html.DisplayFor(s => s.Games)
+</div>
+

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaestWebStore.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,16 @@ namespace MaestWebStore.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        public ActionResult Index()
+        public ActionResult Index(StoreEntities storeEnts)
         {
-            return View();
+            storeEnts.GetMostBought();
+            ViewBag.ListType = "Most bought games: ";
+            return View("Index", storeEnts);
+        }
+
+        public ActionResult ToStore()
+        {
+            return RedirectToAction("Index", "Store", "");
         }
     }
 }

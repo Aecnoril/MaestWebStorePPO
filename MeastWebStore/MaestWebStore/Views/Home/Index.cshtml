@@ -1,8 +1,42 @@
-﻿
+﻿@model MaestWebStore.Models.StoreEntities
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Layouts/_MainLayoutPage.cshtml";
 }
 
-<h2>Index</h2>
-
+<div class="jumbotron">
+    <h1>Maest Web Store</h1>
+    <p>This is the Maest webstore (totally not "Steam" reversed!). You can buy and manage games here! Be sure to look around and don't look directly at the bugs!</p>
+    <p>@Html.ActionLink("Go to the store!", "ToStore", "", new { @class = "btn btn-primary btn-lg" })</p>
+</div>
+<div class="col-lg-5  div-dark pull-left">
+    <h1 class="text-muted">@ViewBag.ListType</h1>
+    <table class="table table-hover">
+        <thead>
+            <tr class="text-muted">
+                <th>#Rank</th>
+                <th>Game Name</th>
+                <th>Game Price</th>
+                <th>View Game</th>
+            </tr>
+        </thead>
+        <tbody>
+            @Html.DisplayFor(s => s.Games)
+        </tbody>
+    </table>
+</div>
+<div class="col-lg-5  div-dark pull-right">
+    <h1 class="text-muted">Your wishlist: </h1>
+    <table class="table table-hover">
+        <thead>
+            <tr class="text-muted">
+                <th>Game Name</th>
+                <th>Game Price</th>
+                <th>View Game</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>

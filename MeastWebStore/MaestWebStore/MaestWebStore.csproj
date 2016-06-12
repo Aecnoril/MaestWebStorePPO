@@ -138,11 +138,20 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <None Include="scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
-    <Content Include="scripts\jquery-1.9.1.js" />
-    <Content Include="scripts\jquery-1.9.1.min.js" />
+    <None Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="scripts\jquery-1.10.2.js" />
+    <Content Include="scripts\jquery-1.10.2.min.js" />
+    <Content Include="scripts\jquery-1.10.2.min.map" />
+    <None Include="scripts\jquery-2.2.3.intellisense.js" />
+    <Content Include="scripts\jquery-2.2.3.js" />
+    <Content Include="scripts\jquery-2.2.3.min.js" />
+    <None Include="scripts\jquery.validate-vsdoc.js" />
+    <Content Include="scripts\jquery.validate.js" />
+    <Content Include="scripts\jquery.validate.min.js" />
+    <Content Include="scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
@@ -172,10 +181,14 @@
     <Content Include="Views\Layouts\_MainLayoutPage.cshtml" />
     <Content Include="Views\Layouts\_ProtectedLayoutPage.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
-    <Content Include="scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\User\Register.cshtml" />
     <Content Include="Views\Store\Index.cshtml" />
-    <Content Include="Views\Store\DisplayTemplates\Game.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Game.cshtml" />
+    <Content Include="Views\Game\Details.cshtml" />
+    <Content Include="scripts\jquery-2.2.3.min.map" />
+    <Content Include="Views\User\updateUser.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\GameSmall.cshtml" />
+    <Content Include="Views\Home\DisplayTemplates\Game.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -185,7 +198,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Game\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

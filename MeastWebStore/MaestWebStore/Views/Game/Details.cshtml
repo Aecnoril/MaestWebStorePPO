@@ -1,0 +1,46 @@
+﻿@model MaestWebStore.Models.Game
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Layouts/_MainLayoutPage.cshtml";
+}
+<div id="game" class="col-lg-10 col-md-6 col-sm-8 col-lg-push-1 col-md-push-3 col-sm-push-2">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title pull-left">@Model.Name</h3>
+            <div class="clearfix"></div>
+
+        </div>
+        <div class="panel-body">
+            @Html.LabelFor(g => g.Name): @Model.Name<br />
+            @Html.LabelFor(g => g.AppType): @Model.AppType<br />
+            @Html.LabelFor(g => g.Developer): @Model.Developer<br />
+            @Html.LabelFor(g => g.Publisher): @Model.Publisher<br />
+            @Html.LabelFor(g => g.Platform): @Model.Platform<br />
+            @Html.LabelFor(g => g.Description): @Model.Description<br />
+            @Html.LabelFor(g => g.ReqId): @Model.ReqId<br />
+            @Html.LabelFor(g => g.Price): @Model.PriceText<br />
+            @Html.LabelFor(g => g.Tags): @Html.DisplayFor(g => g.Tags)<br />
+        </div>
+        <div class="panel-footer">
+            @if (Request.IsAuthenticated)
+            {
+                <a class="text-info" href="@Url.Action("AddCart", "Game", new { id=  @Model.AppID } )">Add To Cart</a>
+                if (!Model.IsInWishlist((MaestWebStore.Models.User)Session["User"])) //No, this is horrible. But it works, and I am running out of time
+                {
+                    <span> | </span>
+                    <a class="text-info" href="@Url.Action("AddWishlist", "Game", new { id=  @Model.AppID } )">Add To Wishlist</a>
+                    <div class="clearfix"></div>
+                }
+                else
+                {
+                    <span> | </span>
+                    <a class="text-info" href="@Url.Action("RemoveWishlist", "Game", new { id=  @Model.AppID } )">Remove From Wishlist</a>
+                    <div class="clearfix"></div>
+                }
+
+            }
+
+        </div>
+    </div>
+</div>

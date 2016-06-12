@@ -1,0 +1,12 @@
+﻿@model MaestWebStore.Models.Game
+
+@{
+    ViewBag.Title = "Game";
+}
+
+<tr class="active">
+    <td>@Html.LabelFor(g => g.Rank): @Model.Rank</td>
+    <td>@Html.LabelFor(g => g.Name): @Model.Name</td>
+    <td>@Html.LabelFor(g => g.Price): ‎@Model.PriceText</td>
+    <td><a class="text-info btn btn-primary btn-sm" href="@Url.Action("Details", "Game", new { id=  @Model.AppID }  )">View Game</a></td>
+</tr>

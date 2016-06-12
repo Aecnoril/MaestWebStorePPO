@@ -11,7 +11,9 @@ namespace MaestWebStore.Models
     {
         [Display(Name = "App ID")]
         public int AppID { get; set; }
-
+        /// <summary>
+        /// The type of app (e.g. Application, game, engine)
+        /// </summary>
         [Display(Name = "App Type")]
         public string AppType { get; set; }
 
@@ -23,7 +25,9 @@ namespace MaestWebStore.Models
 
         [Display(Name = "Publisher")]
         public string Publisher { get; set; }
-
+        /// <summary>
+        /// The platform the game is playable on, like Windows or Linux
+        /// </summary>
         [Display(Name = "Platform")]
         public string Platform { get; set; }
 
@@ -38,8 +42,17 @@ namespace MaestWebStore.Models
         [Display(Name = "Price")]
         public double Price { get; set; }
 
+        [DataType(DataType.Currency)]
+        [Display(Name = "Price")]
+        public string PriceText { get { if (Price <= 0) return "Free"; else return "‎€" + Price.ToString(); } }
+
         [Display(Name = "Tags")]
         public string[] Tags { get; set; }
+        /// <summary>
+        /// The sales-ranking of the game
+        /// </summary>
+        [Display(Name = "Rank")]
+        public int Rank { get; set; }
 
 
         public Game LoadGameID(int appID)
@@ -68,6 +81,28 @@ namespace MaestWebStore.Models
             dbReader.Dispose();
 
             return this;
+        }
+
+        public bool IsInWishlist(User user)
+        {
+            string _sqlSelect = "SELECT * FROM account_wishlistgame WHERE appID = " + AppID + " AND accountid = " + user.UserID;
+            OracleCommand cmd = new OracleCommand(_sqlSelect, Util.DatabaseConnection.Conn);
+
+            var dbReader = cmd.ExecuteReader();
+
+            if (dbReader.HasRows)
+            {
+                cmd.Dispose();
+                dbReader.Dispose();
+                return true;
+            }
+            else
+            {
+                cmd.Dispose();
+                dbReader.Dispose();
+                return false;
+            }
+
         }
     }
 }

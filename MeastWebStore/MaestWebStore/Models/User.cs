@@ -14,6 +14,12 @@ namespace MaestWebStore.Models
         /// <summary>
         /// A required username the user identifies themselves with.
         /// </summary>
+        [Key]
+        public int UserID { get; set; }
+
+        /// <summary>
+        /// A required username the user identifies themselves with.
+        /// </summary>
         [Required]
         [Display(Name = "Username")]
         public string Username { get; set; }
@@ -36,44 +42,61 @@ namespace MaestWebStore.Models
         public bool RememberMe { get; set; }
 
         /// <summary>
+        /// The cart of games the user is about to buy, lasts per session.
+        /// </summary>
+        [Display(Name = "Cart")]
+        public List<Game> Cart { get; set; }
+
+        /// <summary>
+        /// The display property of the cart
+        /// </summary>
+        [Display(Name = "Cart")]
+        public string CartCount { get { if (Cart != null && Cart.Count != 0) return "Items:" + Convert.ToString(Cart.Count); else return "Cart is empty"; } }
+
+        /// <summary>
         /// Checks wether the combination of a username and password exists in the database.
         /// </summary>
         /// <param name="_username">Username</param>
         /// <param name="_password">Password</param>
         /// <returns>A bool wether the user exists or not.</returns>
-        public bool IsValid(string _username, string _password)
+        public User IsValid(User user)
         {
             if (Util.DatabaseConnection.IsDatabaseConnected)
             {
-                
-                string _sqlSelect = "SELECT accountname FROM accounttable WHERE accountname = :accountname AND passwordhash = :passwordhash";
+                string _sqlSelect = "SELECT accountid, accountname FROM accounttable WHERE accountname = :accountname AND passwordhash = :passwordhash";
                 OracleCommand cmd = new OracleCommand(_sqlSelect, Util.DatabaseConnection.Conn);
 
                 cmd.Parameters
                     .Add(new OracleParameter(":accountname", OracleDbType.NVarchar2))
-                    .Value = _username;
+                    .Value = user.Username;
                 cmd.Parameters
                     .Add(new OracleParameter(":passwordhash", OracleDbType.NVarchar2))
-                    .Value = Helpers.Hash.HashSHA1(_password);
+                    .Value = Helpers.Hash.HashSHA1(user.Password);
 
                 var dbReader = cmd.ExecuteReader();
                 if (dbReader.HasRows)
                 {
+                    while (dbReader.Read())
+                    {
+                        user.UserID = dbReader.GetInt32(0);
+                        user.Cart = new List<Game>();
+                    }
+
                     dbReader.Dispose();
                     cmd.Dispose();
-                    return true;
+                    return user;
                 }
                 else
                 {
                     dbReader.Dispose();
                     cmd.Dispose();
-                    return false;
+                    return null;
                 }
             }
             else
             {
                 Debug.WriteLine("Database Error");
-                return false;
+                return null;
             }
 
         }
@@ -99,7 +122,7 @@ namespace MaestWebStore.Models
             else
             {
                 cmd.Dispose(); //Make the cmd ready for the next command
-                
+
                 string _sqlInsert = "INSERT INTO accounttable ( accountname, passwordhash ) VALUES ( :accountname, :passwordhash )";
                 cmd = new OracleCommand(_sqlInsert, Util.DatabaseConnection.Conn);
 
@@ -125,11 +148,100 @@ namespace MaestWebStore.Models
                 {
                     cmd.Dispose();
                 }
-
             }
-
-
-
         }
+
+        /// <summary>
+        /// Updates the user with the new given usermodel.
+        /// </summary>
+        /// <param name="user">The usermodel from the user that is logged in</param>
+        /// <returns>A bool wether the operation was successfull</returns>
+        public bool IsUpdated(User user)
+        {
+            string _sqlInsert = "UPDATE accounttable SET accountname = :accountname, passwordhash = :passwordhash WHERE accountid = :accountid";
+            OracleCommand cmd = new OracleCommand(_sqlInsert, Util.DatabaseConnection.Conn);
+
+            cmd.Parameters
+                .Add(new OracleParameter(":accountname", OracleDbType.NVarchar2))
+                .Value = user.Username;
+
+            cmd.Parameters
+                .Add(new OracleParameter(":passwordhash", OracleDbType.NVarchar2))
+                .Value = Helpers.Hash.HashSHA1(user.Password);
+
+            cmd.Parameters
+                .Add(new OracleParameter(":passwordhash", OracleDbType.Int32))
+                .Value = user.UserID;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (OracleException oEx)
+            {
+                Debug.WriteLine("Couldn't update: " + oEx.Message);
+                return false;
+            }
+            finally
+            {
+                cmd.Dispose();
+            }
+        }
+
+        public void AddWishlist(int gameId)
+        {
+            string _sqlInsert = "INSERT INTO account_wishlistgame ( accountid, appid ) VALUES ( :accountid, :appid )";
+            OracleCommand cmd = new OracleCommand(_sqlInsert, Util.DatabaseConnection.Conn);
+
+            cmd.Parameters
+                .Add(new OracleParameter(":accountid", OracleDbType.NVarchar2))
+                .Value = UserID;
+
+            cmd.Parameters
+                .Add(new OracleParameter(":appid", OracleDbType.NVarchar2))
+                .Value = gameId;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (OracleException oEx)
+            {
+                Debug.WriteLine("Couldn't add games to wishlist: " + oEx.Message);
+            }
+            finally
+            {
+                cmd.Dispose();
+            }
+        }
+
+        public void RemoveWishlist(int gameId)
+        {
+            string _sqlInsert = "DELETE FROM account_wishlistgame WHERE accountID = :accountid AND appid = :appid";
+            OracleCommand cmd = new OracleCommand(_sqlInsert, Util.DatabaseConnection.Conn);
+
+            cmd.Parameters
+                .Add(new OracleParameter(":accountid", OracleDbType.NVarchar2))
+                .Value = UserID;
+
+            cmd.Parameters
+                .Add(new OracleParameter(":appid", OracleDbType.NVarchar2))
+                .Value = gameId;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (OracleException oEx)
+            {
+                Debug.WriteLine("Couldn'tremove games from wishlist: " + oEx.Message);
+            }
+            finally
+            {
+                cmd.Dispose();
+            }
+        }
+
     }
 }
