@@ -13,6 +13,11 @@ namespace MaestWebStore.Controllers
         public ActionResult Index(StoreEntities storeEnts)
         {
             storeEnts.GetGames();
+            if (Request.IsAuthenticated)
+            {
+                User user = (User)Session["User"];
+                storeEnts.GetWishlist(user);
+            }
             ViewBag.ListType = "Games in the store: ";
             return View("Index", storeEnts);
         }
@@ -25,10 +30,23 @@ namespace MaestWebStore.Controllers
             return View("Index", storeEnts);
         }
 
-        public ActionResult WishList(StoreEntities storeEnts)
+        public ActionResult BuyCart(StoreEntities storeEnts)
         {
             User user = (User)Session["User"];
-            storeEnts.GetWishlist(user);
+            //Logic to actually pay for something
+            //TODO: Add the cart to owned games
+            user.Cart.Clear();
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult WishList(StoreEntities storeEnts)
+        {
+            if(Request.IsAuthenticated)
+            {
+                User user = (User)Session["User"];
+                storeEnts.GetWishlist(user);
+            }
             ViewBag.ListType = "Games in your Wishlist: ";
             return View("Index", storeEnts);
         }

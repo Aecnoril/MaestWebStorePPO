@@ -7,6 +7,6 @@ namespace MaestWebStore.Models
 {
     public class Application
     {
-
+        //Not sure if reduntant. Perhaps for future use
     }
 }

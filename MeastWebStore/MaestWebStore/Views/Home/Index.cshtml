@@ -31,12 +31,22 @@
     <table class="table table-hover">
         <thead>
             <tr class="text-muted">
+                <th>#Rank</th>
                 <th>Game Name</th>
                 <th>Game Price</th>
                 <th>View Game</th>
             </tr>
         </thead>
         <tbody>
+            @if (Request.IsAuthenticated)
+            {
+                @Html.DisplayFor(s => s.Wishlist)
+            }
+            else
+            {
+                <h1 class="text-muted">You are not logged in! </h1>
+            }
+
         </tbody>
     </table>
 </div>

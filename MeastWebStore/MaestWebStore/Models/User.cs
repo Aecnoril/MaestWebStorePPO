@@ -17,35 +17,42 @@ namespace MaestWebStore.Models
         [Key]
         public int UserID { get; set; }
 
+        public string Role { get;  set;}
+
+        [Required]
+        [Display(Name = "Username")]
         /// <summary>
         /// A required username the user identifies themselves with.
         /// </summary>
-        [Required]
-        [Display(Name = "Username")]
         public string Username { get; set; }
 
-        /// <summary>
-        /// The password (not hashed) the user used to log in.
-        /// </summary>
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
+        /// <summary>
+        /// The password (not hashed) the user used to log in.
+        /// </summary>
         public string Password { get; set; }
 
         //TODO: Perhaps add a new password confirmation field using:
         //[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
 
+
+        [Display(Name = "Remember me on this computer")]
         /// <summary>
         /// A boolean which if checked leaves the user logged in.
         /// </summary>
-        [Display(Name = "Remember me on this computer")]
         public bool RememberMe { get; set; }
 
+        [Display(Name = "Cart")]
         /// <summary>
         /// The cart of games the user is about to buy, lasts per session.
         /// </summary>
-        [Display(Name = "Cart")]
         public List<Game> Cart { get; set; }
+
+
+        [Display(Name = "Wishlist")]
+        public List<Game> Wishlist { get; set; }
 
         /// <summary>
         /// The display property of the cart
@@ -58,7 +65,7 @@ namespace MaestWebStore.Models
         /// </summary>
         /// <param name="_username">Username</param>
         /// <param name="_password">Password</param>
-        /// <returns>A bool wether the user exists or not.</returns>
+        /// <returns>A user object if the login is successfull.</returns>
         public User IsValid(User user)
         {
             if (Util.DatabaseConnection.IsDatabaseConnected)
@@ -101,6 +108,52 @@ namespace MaestWebStore.Models
 
         }
 
+        public User GetUserByUsername(string userName)
+        {
+            if (Util.DatabaseConnection.IsDatabaseConnected)
+            {
+                string _sqlSelect = "SELECT accountid, accountname FROM accounttable WHERE accountname = :accountname";
+                OracleCommand cmd = new OracleCommand(_sqlSelect, Util.DatabaseConnection.Conn);
+
+                cmd.Parameters
+                    .Add(new OracleParameter(":accountname", OracleDbType.NVarchar2))
+                    .Value = userName;
+
+                var dbReader = cmd.ExecuteReader();
+                if (dbReader.HasRows)
+                {
+                    User user = new User();
+                    while (dbReader.Read())
+                    {
+                        user.UserID = dbReader.GetInt32(0);
+                        user.Cart = new List<Game>();
+                    }
+
+                    dbReader.Dispose();
+                    cmd.Dispose();
+                    return user;
+                }
+                else
+                {
+                    dbReader.Dispose();
+                    cmd.Dispose();
+                    return null;
+                }
+            }
+            else
+            {
+                Debug.WriteLine("Database Error");
+                return null;
+            }
+
+        }
+
+        /// <summary>
+        /// logs the user in
+        /// </summary>
+        /// <param name="_username">Username</param>
+        /// <param name="_password">Password</param>
+        /// <returns></returns>
         public bool IsRegistered(string _username, string _password)
         {
             string _sqlSelect = "SELECT accountname FROM accounttable WHERE accountname = :accountname";
@@ -189,6 +242,10 @@ namespace MaestWebStore.Models
             }
         }
 
+        /// <summary>
+        /// Adds a game to the users wishlist.
+        /// </summary>
+        /// <param name="gameId"></param>
         public void AddWishlist(int gameId)
         {
             string _sqlInsert = "INSERT INTO account_wishlistgame ( accountid, appid ) VALUES ( :accountid, :appid )";
@@ -216,6 +273,10 @@ namespace MaestWebStore.Models
             }
         }
 
+        /// <summary>
+        /// Removes a game from a wishlist.
+        /// </summary>
+        /// <param name="gameId"></param>
         public void RemoveWishlist(int gameId)
         {
             string _sqlInsert = "DELETE FROM account_wishlistgame WHERE accountID = :accountid AND appid = :appid";

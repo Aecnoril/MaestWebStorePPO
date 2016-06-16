@@ -13,6 +13,8 @@ namespace MaestWebStore.Models
         /// </summary>
         public List<Game> Games { get; set; }
 
+        public List<Game> Wishlist { get; set; }
+
         /// <summary>
         /// All the IDs currently in the game-catalog. Used to keep everything in line with the available games.
         /// </summary>
@@ -51,6 +53,7 @@ namespace MaestWebStore.Models
             }
         }
 
+        //Gets the user's cart
         public void GetCart(User user)
         {
             Games = new List<Game>();
@@ -67,13 +70,13 @@ namespace MaestWebStore.Models
                 }
             }
         }
-
+        //Gets the user's wishlist
         public void GetWishlist(User user)
         {
             if (Util.DatabaseConnection.IsDatabaseConnected)
             {
                 _GameIDs = new List<Tuple<int, int>>();
-                Games = new List<Game>();
+                Wishlist = new List<Game>();
                 string _sqlSelect = "SELECT appid FROM account_wishlistgame WHERE accountid = " + user.UserID;
                 OracleCommand cmd = new OracleCommand(_sqlSelect, Util.DatabaseConnection.Conn);
 
@@ -87,7 +90,7 @@ namespace MaestWebStore.Models
 
                 foreach (Tuple<int, int> i in _GameIDs)
                 {
-                    Games.Add(new Game().LoadGameID(i.Item1));
+                    Wishlist.Add(new Game().LoadGameID(i.Item1));
                 }
             }
             else
@@ -95,7 +98,7 @@ namespace MaestWebStore.Models
                 System.Diagnostics.Debug.WriteLine("Database Error");
             }
         }
-
+        //Gets the most bought games
         public void GetMostBought()
         {
             if (Util.DatabaseConnection.IsDatabaseConnected)

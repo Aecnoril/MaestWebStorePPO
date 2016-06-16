@@ -54,7 +54,7 @@ namespace MaestWebStore.Models
         [Display(Name = "Rank")]
         public int Rank { get; set; }
 
-
+        //Loads a game using it's ID
         public Game LoadGameID(int appID)
         {
             string _sqlSelect = "SELECT * FROM game WHERE appID = " + appID;
@@ -82,7 +82,7 @@ namespace MaestWebStore.Models
 
             return this;
         }
-
+        //Checks wether a game is in a user's wishlist.
         public bool IsInWishlist(User user)
         {
             string _sqlSelect = "SELECT * FROM account_wishlistgame WHERE appID = " + AppID + " AND accountid = " + user.UserID;

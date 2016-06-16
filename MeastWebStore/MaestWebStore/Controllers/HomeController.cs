@@ -13,6 +13,12 @@ namespace MaestWebStore.Controllers
         public ActionResult Index(StoreEntities storeEnts)
         {
             storeEnts.GetMostBought();
+            if (Request.IsAuthenticated)
+            {
+                User user = (User)Session["User"];
+                storeEnts.GetWishlist(user);
+            }
+
             ViewBag.ListType = "Most bought games: ";
             return View("Index", storeEnts);
         }

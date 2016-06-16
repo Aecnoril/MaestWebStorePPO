@@ -176,12 +176,11 @@ D:\Workspace\SchoolHerstart\SE\VisualStudio\SE2PO\MeastWebStore\MaestWebStore\bi
 D:\Workspace\SchoolHerstart\SE\VisualStudio\SE2PO\MeastWebStore\MaestWebStore\bin\Microsoft.AI.WindowsServer.xml
 D:\Workspace\SchoolHerstart\SE\VisualStudio\SE2PO\MeastWebStore\MaestWebStore\bin\Microsoft.ApplicationInsights.xml
 D:\Workspace\SchoolHerstart\SE\VisualStudio\SE2PO\MeastWebStore\MaestWebStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Workspace\SchoolHerstart\SE\VisualStudio\SE2PO\MeastWebStore\MaestWebStore\bin\System.Web.Mvc.xml
 D:\Workspace\SchoolHerstart\SE\VisualStudio\SE2PO\MeastWebStore\MaestWebStore\bin\System.Web.Razor.xml
 D:\Workspace\SchoolHerstart\SE\VisualStudio\SE2PO\MeastWebStore\MaestWebStore\bin\System.Web.Webpages.xml
 D:\Workspace\SchoolHerstart\SE\VisualStudio\SE2PO\MeastWebStore\MaestWebStore\bin\System.Web.Webpages.Deployment.xml
 D:\Workspace\SchoolHerstart\SE\VisualStudio\SE2PO\MeastWebStore\MaestWebStore\bin\System.Web.Webpages.Razor.xml
 D:\Workspace\SchoolHerstart\SE\VisualStudio\SE2PO\MeastWebStore\MaestWebStore\bin\System.Web.Helpers.xml
-D:\Workspace\SchoolHerstart\SE\VisualStudio\SE2PO\MeastWebStore\MaestWebStore\bin\System.Web.Mvc.xml
-D:\Workspace\SchoolHerstart\SE\VisualStudio\SE2PO\MeastWebStore\MaestWebStore\obj\Debug\MaestWebStore.csprojResolveAssemblyReference.cache
 D:\Workspace\SchoolHerstart\SE\VisualStudio\SE2PO\MeastWebStore\MaestWebStore\obj\Debug\MaestWebStore.dll
 D:\Workspace\SchoolHerstart\SE\VisualStudio\SE2PO\MeastWebStore\MaestWebStore\obj\Debug\MaestWebStore.pdb
